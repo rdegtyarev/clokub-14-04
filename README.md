@@ -139,6 +139,10 @@ serviceaccount/netology created
 
 ## Задача 2 (*): Работа с сервис-акаунтами внутри модуля
 
+<details>
+
+  <summary>Описание задачи</summary> 
+
 Выбрать любимый образ контейнера, подключить сервис-акаунты и проверить
 доступность API Kubernetes
 
@@ -178,6 +182,16 @@ cat ~/.kube/config
 
 ```
 kubectl cluster-info
+```
+
+</details>
+
+### Решение
+
+Подключение к api kubernetes успешно, авторизация с использованием токена сервис-аккаунта  ($TOKEN) и корневого сертификата кластера $CACERT.
+
+```
+curl -H "Authorization: Bearer $TOKEN" --cacert $CACERT $K8S/api/v1/
 ```
 
 ---
